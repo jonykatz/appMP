@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Calculador  de Precios para MercadoPago</title>
+  <link rel="icon" type="image/jpg" href="logo-mercadopago-300x214.jpg">
+  <img src="logo-mercadopago-300x214.jpg" class="rounded mx-auto d-block" alt="Responsive image"><br>
+</head>
+<body>
+   <div id="app">
+     
+    <h1 class="text-center">{{titulo}}</h1>
+    <br>
+    
+    <div class="input-group mb-2" >
+            <div class="input-group-prepend">
+              <span class="input-group-text">Valor en efectivo: $</span>
+            </div>
+            <input type="text" class="form-control" v-model="efectivo">
+            
+    </div>
+
+    <br>
+    <br>
+        <h4 class="text-center">Elegir Tiempo de Acreditación del Dinero:</h4>
+    
+    <div class="row">
+            <div class="col-md-2"></div>
+                 <div class="btn-group btn-group-lg col-md-8" >
+                     <button type="button" class="btn btn-info" id="enElMomento" @click = "pagoInstantaneo">Instantanea</button>
+
+                     <button type="button" class="btn btn-info" id="14Dias" @click = "pago14Dias">14 Días</button>
+
+                    <button type="button" class="btn btn-info" id="30Dias" @click ="pago30Dias">30 Días</button>
+               
+                    <button type="button" class="btn btn-info" id="14Dias" @click = "pago14Dias">Tarjeta de Debito (Acredita al Instante)</button>
+               
+                </div>
+            <div class="col-md-2"></div>
+    </div>
+    
+            <br>
+            <br>
+            <h4 class="text-center"><strong>El precio a cobrar es:  ${{total}}</strong> </h4>
+
+   </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="app.js"></script>
+</body>
+</html>
